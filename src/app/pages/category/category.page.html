@@ -1,0 +1,23 @@
+<ion-content>
+  <div class="main_content_div">
+      <form (ngSubmit)="sendCategory()" [formGroup]="categoryForm">
+      
+      <!-- <ion-icon name="chevron-back" class="back_btn" (click)="goToBack()"></ion-icon> -->
+      <ion-label class="head_lbl">Category</ion-label>
+      <ion-label class="grey_lbl">Provide Name of the category</ion-label>
+      <!-- <ion-item > -->
+        <!-- <ion-label position="floating">Default input</ion-label> -->
+        <ion-input type="text" formControlName="name" placeholder="Title">
+          <ion-icon name="clipboard-outline"></ion-icon>
+      </ion-input>
+
+      <!-- </ion-item> -->
+    
+      <ion-button expand="block" shape="round" type="submit" [disabled]="!categoryForm.valid">
+        Send
+      </ion-button>
+      </form>
+  </div>
+ <!-- <div class="ion-text-center"> <small>Already Have a Code?</small> <ion-label class="small_lbl" (click)="goToVerify()" color="danger"> PROCEED</ion-label> </div> -->
+  <ion-spinner *ngIf="loading" name="crescent" class="ion-text-center"></ion-spinner>
+</ion-content>

@@ -1,0 +1,223 @@
+<ion-content>
+    
+    <div class="main_content_div" *ngIf="!load">
+        
+<!-- 
+        <ion-slides pager="ios">
+            <ion-slide *ngFor="let item of sliders">
+                <div class="back_image" [style.backgroundImage]="'url('+ item +')'">
+                  <div class="overlay_div">
+                      <div class="icn_flex">
+                          <ion-icon name="heart-outline" style="width: 23px;"></ion-icon>
+                          <ion-icon name="wallet" (click)="goToCart()" ></ion-icon>
+                      </div>
+                      <ion-label class="collection_lbl">SPRING COLLECTION</ion-label>
+                      <div class="line_div"></div>
+                      
+                      <ion-label class="off_lbl">20% OFF</ion-label>
+                      <ion-label class="white_lbl">For selected spring style</ion-label>
+                      <ion-button size="small" shape="round">
+                         Add Product
+                      </ion-button>
+                  </div>
+                </div>
+            </ion-slide>
+        </ion-slides> -->
+        <div class="back_image" [style.backgroundImage]="'url(assets/imgs/10.jpg)'">
+            <div class="overlay_div">
+                
+                <div class="icn_flex">
+                    <ion-icon name="bag"></ion-icon>
+                    <ion-icon name="wallet" (click)="goToCart()" ></ion-icon>
+                </div>
+                <ion-label class="collection_lbl">{{shops.name}}</ion-label>
+                <div class="line_div"></div>
+                
+                <ion-label class="off_lbl">{{shops.wallet.balance}}</ion-label>
+                <ion-label class="white_lbl">{{shops.address}}</ion-label>
+                <!-- <ion-spinner *ngIf="load" name="crescent" class="ion-text-center"></ion-spinner> -->
+                <!-- <ion-button size="small" shape="round">
+                   Add Product
+                </ion-button> -->
+            </div>
+        </div>
+        <div class="content_div">
+            <div class="header_flex">
+                <ion-label class="bold_lbl">Categories</ion-label>
+                <ion-label class="grey_lbl">Show All</ion-label>
+            </div>
+            <div class="holiday_slider" *ngIf="shops.categories.length > 0">
+                <div class="main_col" *ngFor="let item of cats" (click)="goExplorePro()">
+                    <div class="col_back" [style.backgroundImage]="'url('+ item +')'">
+                        <div class="overlay">
+                            <ion-label class="white_lbl">Classic women collection</ion-label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="holiday_slider" > -->
+                <div class="nodata" *ngIf="shops.categories.length == 0">
+                    <!-- <ion-img src="/assets/imgs/no-data.png"></ion-img> -->
+                    <div class="but">
+                        <ion-button class="ion-text-center" size="small" shape="round">
+                            Add Category
+                         </ion-button>
+                    </div>
+                   
+                <!-- </div> -->
+             
+            </div>
+            <div class="header_flex">
+                <ion-label class="bold_lbl">Best Sellers</ion-label>
+                <ion-label class="grey_lbl" (click)="goToShopPage()">Show All</ion-label>
+            </div>
+            <div class="trend_slider">
+                <div class="main_col" *ngFor="let item of product" (click)="goToProductDetail()">
+                    <div class="col_back" [style.backgroundImage]="'url('+ item +')'"></div>
+                    <div class="detail_div">
+                        <ion-label class="name_lbl">Black T-shirt</ion-label>
+                        <ion-label class="price_lbl">$ 40.70</ion-label>
+                    </div>
+                </div>
+            </div>
+            <div class="header_flex">
+                <ion-label class="bold_lbl">Products</ion-label>
+                <ion-label class="grey_lbl" (click)="goToShopPage()">Show All</ion-label>
+            </div>
+            <div class="collection_slider" *ngIf="shops.products.length > 0">
+                <div class="main_col" *ngFor="let item of product" (click)="goToProductDetail()">
+                    <div class="col_back" [style.backgroundImage]="'url('+ item +')'">
+                        <div class="round_div">
+                            <ion-icon name="heart"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="detail_div">
+                        <ion-label class="name_lbl">Black T-shirt</ion-label>
+                        <ion-label class="price_lbl">$ 40.70</ion-label>
+                    </div>
+                </div>
+            </div>
+            <div class="imagenodata">
+                <ion-img src="/assets/imgs/no-data.png"></ion-img>
+            </div>
+            
+
+          
+            
+
+         
+
+
+        </div>
+
+    </div>
+    <div class="main_content_div" *ngIf="load">
+        
+        <!-- 
+                <ion-slides pager="ios">
+                    <ion-slide *ngFor="let item of sliders">
+                        <div class="back_image" [style.backgroundImage]="'url('+ item +')'">
+                          <div class="overlay_div">
+                              <div class="icn_flex">
+                                  <ion-icon name="heart-outline" style="width: 23px;"></ion-icon>
+                                  <ion-icon name="wallet" (click)="goToCart()" ></ion-icon>
+                              </div>
+                              <ion-label class="collection_lbl">SPRING COLLECTION</ion-label>
+                              <div class="line_div"></div>
+                              
+                              <ion-label class="off_lbl">20% OFF</ion-label>
+                              <ion-label class="white_lbl">For selected spring style</ion-label>
+                              <ion-button size="small" shape="round">
+                                 Add Product
+                              </ion-button>
+                          </div>
+                        </div>
+                    </ion-slide>
+                </ion-slides> -->
+                <div class="back_image" [style.backgroundImage]="'url(assets/imgs/10.jpg)'">
+                    <div class="overlay_div">
+                        
+                        <div class="icn_flex">
+                            <ion-icon name="bag"></ion-icon>
+                            <ion-icon name="wallet" (click)="goToCart()" ></ion-icon>
+                        </div>
+                        <!-- <ion-label class="collection_lbl">SPRING COLLECTION</ion-label> -->
+                        <ion-skeleton-text class="collection_lbl" [animated]="true" style="width: 45%;background-color: white;height: 5%;opacity: 0.5;border-radius: 15px;"></ion-skeleton-text>
+                        <div class="line_div"></div>
+                        
+                        <!-- <ion-label class="off_lbl">20% OFF</ion-label> -->
+                        <ion-skeleton-text class="off_lbl" [animated]="true" style="width: 35%;background-color: white;height: 20%;opacity: 0.5;border-radius: 15px;"></ion-skeleton-text>
+                        <!-- <ion-label class="white_lbl">For selected spring style</ion-label> -->
+                        <ion-skeleton-text class="white_lbl" [animated]="true" style="width: 50%;background-color: white;height: 5%;opacity: 0.5;border-radius: 15px;"></ion-skeleton-text>
+                        <!-- <ion-spinner *ngIf="load" name="crescent" class="ion-text-center"></ion-spinner> -->
+                        <!-- <ion-button size="small" shape="round">
+                           Add Product
+                        </ion-button> -->
+                    </div>
+                </div>
+                <div class="content_div">
+                    <div class="header_flex">
+                        <ion-label class="bold_lbl">Categories</ion-label>
+                        <ion-label class="grey_lbl">Show All</ion-label>
+                    </div>
+                    <div class="holiday_slider">
+                        <!-- <div class="main_col" *ngFor="let item of product" (click)="goExplorePro()">
+                            <div class="col_back" [style.backgroundImage]="'url('+ item +')'">
+                                <div class="overlay">
+                                    <ion-label class="white_lbl">Classic women collection</ion-label>
+                                </div>
+                            </div>
+                        </div> -->
+                       
+                            <div class="main_col"*ngFor="let item of product">
+                                <ion-skeleton-text class="col_back" [animated]="true" style="width: 100%;">
+                                   
+                                </ion-skeleton-text>
+                           
+                                <div class="overlay">
+                                    <ion-skeleton-text  class="name_lbl" [animated]="true" style="width: 90%;"></ion-skeleton-text>
+                                    <ion-skeleton-text class="price_lbl" [animated]="true" style="width: 45%;"></ion-skeleton-text>
+                                </div>
+                            </div>
+                        
+                    </div>
+                    <div class="header_flex">
+                        <ion-label class="bold_lbl">Best Sellers</ion-label>
+                        <ion-label class="grey_lbl" (click)="goToShopPage()">Show All</ion-label>
+                    </div>
+                    <div class="trend_slider">
+                        <div class="main_col" *ngFor="let item of product" (click)="goToProductDetail()">
+                            <div class="col_back" [style.backgroundImage]="'url('+ item +')'"></div>
+                            <div class="detail_div">
+                                <ion-label class="name_lbl">Black T-shirt</ion-label>
+                                <ion-label class="price_lbl">$ 40.70</ion-label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header_flex">
+                        <ion-label class="bold_lbl">Products</ion-label>
+                        <ion-label class="grey_lbl" (click)="goToShopPage()">Show All</ion-label>
+                    </div>
+                   
+        
+                    <div class="collection_slider">
+                        <div class="main_col"*ngFor="let item of product">
+                            <ion-skeleton-text class="col_back" [animated]="true" style="width: 100%;">
+                               
+                            </ion-skeleton-text>
+                       
+                            <div class="detail_div">
+                                <ion-skeleton-text  class="name_lbl" [animated]="true" style="width: 90%;"></ion-skeleton-text>
+                                <ion-skeleton-text class="price_lbl" [animated]="true" style="width: 45%;"></ion-skeleton-text>
+                            </div>
+                        </div>
+                    </div>
+                    
+        
+                 
+        
+        
+                </div>
+        
+            </div>
+</ion-content>

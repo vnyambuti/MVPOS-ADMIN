@@ -1,0 +1,31 @@
+<ion-content>
+    <div class="main_content_div">
+        <form  [formGroup]="colorForm" (ngSubmit)="addColour()">
+      
+            <!-- <ion-icon name="chevron-back" class="back_btn" (click)="goToBack()"></ion-icon> -->
+            <ion-label class="grey_title">Colour</ion-label>
+            <!-- <ion-item > -->
+              <ion-input type="text" class="custom" formControlName="color" placeholder="Red">
+                <!-- <ion-icon name="clipboard-outline"></ion-icon> -->
+            </ion-input>
+            <ion-label class="grey_title">Stock</ion-label>
+         
+              <ion-input type="number" class="custom" formControlName="stock" placeholder="10">
+                <!-- <ion-icon name="pricetag-outline"></ion-icon> -->
+            </ion-input>  
+            <ion-label class="grey_title">Low Stock</ion-label>
+            <ion-input type="number" class="custom" formControlName="lowstock" placeholder="10">
+                <!-- <ion-icon name="pricetag-outline"></ion-icon> -->
+            </ion-input>
+           
+
+
+        <ion-button *ngIf="!kala" expand="block" shape="round" type="submit" [disabled]="!colorForm.valid" >
+            Add
+        </ion-button>
+        <ion-button *ngIf="kala" expand="block" shape="round" type="submit" [disabled]="!colorForm.valid" >
+            Update
+        </ion-button>
+    </form>
+    </div>
+</ion-content>

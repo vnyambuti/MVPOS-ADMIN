@@ -1,0 +1,19 @@
+<ion-content>
+  <div class="main_content_div">
+      <ion-icon name="chevron-back" (click)="goBack()" class="back_btn"></ion-icon>
+      <ion-label class="head_lbl">Enter the Code <br> to reset Your Password</ion-label>
+      <ion-label class="grey_lbl">We have sent you an email with a code to <br> your email</ion-label>
+      
+      <div style="text-align: center;">
+          <ng-otp-input  (onInputChange)="onOtpChange($event)"  [config]="{length:6}"></ng-otp-input>
+      </div>
+      
+<p></p>
+<p></p>
+<p></p>
+<div></div>
+      <ion-label class="small_lbl" color="danger" (click)="goBack()">Send a new code</ion-label>
+
+  </div>
+  <ion-spinner *ngIf="loading" name="crescent" class="ion-text-center"></ion-spinner>
+</ion-content>

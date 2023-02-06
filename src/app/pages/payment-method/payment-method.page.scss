@@ -1,0 +1,44 @@
+.main_content_div {
+    padding: 16px;
+
+    .title_lbl {
+        font-size: 20px;
+        font-family: 'semi-bold';
+    }
+
+    .flex_div {
+        border-bottom: 1px solid lightgrey;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 25px;
+
+        .price_lbl {
+            font-family: 'semi-bold';
+        }
+    }
+
+    ion-button {
+        margin: 0px;
+        margin-top: 16px;
+    }
+
+    .sc-ion-input-md-h{
+        border:2px solid grey;
+        border-radius: 5px;
+        padding-left: 10px !important;
+    }
+    .grey_title {
+        color: grey;
+        font-size: 12px;
+        // margin-top: 10px;
+        margin-bottom: 5px;
+    }
+
+    // .custom{
+    //     margin-bottom: 5px;
+    // }
+
+}

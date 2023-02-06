@@ -1,0 +1,31 @@
+<ion-content>
+    <div class="main_content_div">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+        <ion-label class="head_lbl">Login to <br> your account</ion-label>
+
+        <div class="white_div">
+            <ion-item class="username_box" lines="none">
+              <ion-label position="floating">Email</ion-label>
+              <ion-input type="email" formControlName="email"></ion-input>
+            </ion-item>
+            <ion-item class="password_box" lines="none">
+                <ion-label position="floating">Password</ion-label>
+                <ion-input type="password" formControlName="password"></ion-input>
+               
+            </ion-item>
+        </div>
+
+        <ion-button expand="block" shape="round" type="submit" [disabled]="!loginForm.valid">
+          Log In
+        </ion-button>
+
+      
+   
+
+      </form>
+
+    </div>
+    <div class="ion-text-center"> <small>Forgot Password ?</small> <ion-label class="small_lbl" (click)="goToForgot()"  color="danger"> RESET</ion-label> </div>
+    <ion-spinner *ngIf="loading" name="crescent" class="ion-text-center"></ion-spinner>
+</ion-content>
