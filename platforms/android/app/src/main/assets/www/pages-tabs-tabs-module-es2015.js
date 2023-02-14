@@ -38,7 +38,7 @@ const routes = [
         children: [
             {
                 path: 'shop',
-                loadChildren: () => Promise.all(/*! import() | shop-shop-module */[__webpack_require__.e("common"), __webpack_require__.e("shop-shop-module")]).then(__webpack_require__.bind(null, /*! ../shop/shop.module */ "./src/app/pages/shop/shop.module.ts")).then(m => m.ShopPageModule)
+                loadChildren: () => __webpack_require__.e(/*! import() | shop-shop-module */ "shop-shop-module").then(__webpack_require__.bind(null, /*! ../shop/shop.module */ "./src/app/pages/shop/shop.module.ts")).then(m => m.ShopPageModule)
             },
             {
                 path: 'explore',

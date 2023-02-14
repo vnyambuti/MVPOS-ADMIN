@@ -4,17 +4,35 @@
       
       <!-- <ion-icon name="chevron-back" class="back_btn" (click)="goToBack()"></ion-icon> -->
       <ion-label class="head_lbl">Category</ion-label>
-      <ion-label class="grey_lbl">Provide Name of the category</ion-label>
-      <!-- <ion-item > -->
-        <!-- <ion-label position="floating">Default input</ion-label> -->
-        <ion-input type="text" formControlName="name" placeholder="Title">
-          <ion-icon name="clipboard-outline"></ion-icon>
+      <div class="stepper_div">
+        <ion-icon name="person-add-outline" [class.activeTab]="tabID >= 1"></ion-icon>
+        <ion-label [class.activeTab]="tabID >= 2">
+            <span>•</span>
+            <span>•</span>
+            <span>•</span>
+            <span>•</span>
+        </ion-label>
+        <ion-icon name="filter-circle-outline" [class.activeTab]="tabID >= 2"></ion-icon>
+        <ion-label [class.activeTab]="tabID == 3">
+            <span>•</span>
+            <span>•</span>
+            <span>•</span>
+            <span>•</span>
+        </ion-label>
+        <ion-icon name="pricetags-outline" [class.activeTab]="tabID == 3"></ion-icon>
+    </div>
+      <ion-item >
+        <ion-label position="floating">Title</ion-label>
+        <ion-input type="text" formControlName="name" >
+          <!-- <ion-icon name="clipboard-outline"></ion-icon> -->
       </ion-input>
 
-      <!-- </ion-item> -->
+      </ion-item>
+      <p></p>
+      <p></p>
     
       <ion-button expand="block" shape="round" type="submit" [disabled]="!categoryForm.valid">
-        Send
+        Add
       </ion-button>
       </form>
   </div>

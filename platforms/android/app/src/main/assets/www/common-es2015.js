@@ -434,19 +434,6 @@ const openURL = async (url, ev, direction, animation) => {
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/main-modal/main-modal.page.html":
-/*!*********************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pages/main-modal/main-modal.page.html ***!
-  \*********************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-content>\n  <div class=\"main_content_div\">\n      <div class=\"back_image\" [style.backgroundImage]=\"'url(assets/imgs/11.jpg)'\">\n          <div class=\"close_btn\" (click)=\"close()\">\n            <ion-icon name=\"close\"></ion-icon>\n          </div>\n          <div class=\"overlay\"></div>\n      </div>\n      <div class=\"content_div\">\n\n          <ion-button expand=\"block\" shape=\"round\" (click)=\"close()\">\n            <ion-icon slot=\"end\" name=\"arrow-forward\"></ion-icon>\n            Shop Now\n          </ion-button>\n\n      </div>\n  </div>\n</ion-content>\n");
-
-/***/ }),
-
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/payment-method/payment-method.page.html":
 /*!*****************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pages/payment-method/payment-method.page.html ***!
@@ -470,60 +457,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<ion-content>\n    <div class=\"main_content_div\">\n        <div class=\"back_image\" [style.backgroundImage]=\"'url(assets/imgs/11.jpg)'\">\n            <div class=\"close_btn\" (click)=\"close()\">\n              <ion-icon name=\"close\"></ion-icon>\n            </div>\n        </div>\n        <div class=\"content_div\">\n            <ion-label>Success ! You've added this item to your bag.</ion-label>\n\n            <ion-button expand=\"block\" shape=\"round\" (click)=\"goToCart()\">\n              <ion-icon slot=\"end\" name=\"arrow-forward\"></ion-icon>\n              Checkout\n            </ion-button>\n\n            <ion-button expand=\"block\" shape=\"round\" class=\"shop_btn\" (click)=\"goToShop()\">\n              Continue Shopping\n            </ion-button>\n\n        </div>\n    </div>\n</ion-content>\n");
-
-/***/ }),
-
-/***/ "./src/app/pages/main-modal/main-modal.page.scss":
-/*!*******************************************************!*\
-  !*** ./src/app/pages/main-modal/main-modal.page.scss ***!
-  \*******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".main_content_div ion-label {\n  display: block;\n}\n.main_content_div .back_image {\n  width: 100%;\n  height: 250px;\n  background-position: center;\n  background-size: cover;\n  background-repeat: no-repeat;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  position: relative;\n}\n.main_content_div .back_image .overlay {\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, 0.3);\n}\n.main_content_div .back_image .close_btn {\n  height: 25px;\n  width: 25px;\n  border-radius: 100%;\n  background: #969696;\n  position: absolute;\n  right: 10px;\n  top: 10px;\n}\n.main_content_div .back_image .close_btn ion-icon {\n  color: white;\n  position: absolute;\n  top: 50%;\n  left: 53%;\n  transform: translate(-50%, -50%);\n}\n.main_content_div .content_div {\n  padding: 20px;\n}\n.main_content_div .content_div ion-button {\n  margin: 0;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvbWFpbi1tb2RhbC9tYWluLW1vZGFsLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDSTtFQUNJLGNBQUE7QUFBUjtBQUVJO0VBQ0ksV0FBQTtFQUNBLGFBQUE7RUFDQSwyQkFBQTtFQUNBLHNCQUFBO0VBQ0EsNEJBQUE7RUFDQSw0QkFBQTtFQUNBLDZCQUFBO0VBQ0Esa0JBQUE7QUFBUjtBQUVRO0VBQ0ksV0FBQTtFQUNBLFlBQUE7RUFDQSw4QkFBQTtBQUFaO0FBR1E7RUFDSSxZQUFBO0VBQ0EsV0FBQTtFQUNBLG1CQUFBO0VBQ0EsbUJBQUE7RUFDQSxrQkFBQTtFQUNBLFdBQUE7RUFDQSxTQUFBO0FBRFo7QUFHWTtFQUNJLFlBQUE7RUFDQSxrQkFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsZ0NBQUE7QUFEaEI7QUFNSTtFQUNJLGFBQUE7QUFKUjtBQU1RO0VBQ0ksU0FBQTtBQUpaIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvbWFpbi1tb2RhbC9tYWluLW1vZGFsLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tYWluX2NvbnRlbnRfZGl2IHtcbiAgICBpb24tbGFiZWwge1xuICAgICAgICBkaXNwbGF5OiBibG9jaztcbiAgICB9XG4gICAgLmJhY2tfaW1hZ2Uge1xuICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgaGVpZ2h0OiAyNTBweDtcbiAgICAgICAgYmFja2dyb3VuZC1wb3NpdGlvbjogY2VudGVyO1xuICAgICAgICBiYWNrZ3JvdW5kLXNpemU6IGNvdmVyO1xuICAgICAgICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xuICAgICAgICBib3JkZXItdG9wLWxlZnQtcmFkaXVzOiAxMHB4O1xuICAgICAgICBib3JkZXItdG9wLXJpZ2h0LXJhZGl1czogMTBweDtcbiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuXG4gICAgICAgIC5vdmVybGF5IHtcbiAgICAgICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgICAgICAgICAgYmFja2dyb3VuZDogcmdiYSgwLDAsMCwwLjMpO1xuICAgICAgICB9XG5cbiAgICAgICAgLmNsb3NlX2J0biB7XG4gICAgICAgICAgICBoZWlnaHQ6IDI1cHg7XG4gICAgICAgICAgICB3aWR0aDogMjVweDtcbiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDEwMCU7XG4gICAgICAgICAgICBiYWNrZ3JvdW5kOiAjOTY5Njk2O1xuICAgICAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgICAgICAgcmlnaHQ6IDEwcHg7XG4gICAgICAgICAgICB0b3A6IDEwcHg7XG5cbiAgICAgICAgICAgIGlvbi1pY29uIHtcbiAgICAgICAgICAgICAgICBjb2xvcjogd2hpdGU7XG4gICAgICAgICAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgICAgICAgICAgIHRvcDogNTAlO1xuICAgICAgICAgICAgICAgIGxlZnQ6IDUzJTtcbiAgICAgICAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLC01MCUpO1xuICAgICAgICAgICAgfVxuXG4gICAgICAgIH1cbiAgICB9XG4gICAgLmNvbnRlbnRfZGl2IHtcbiAgICAgICAgcGFkZGluZzogMjBweDtcblxuICAgICAgICBpb24tYnV0dG9uIHtcbiAgICAgICAgICAgIG1hcmdpbjogMDtcbiAgICAgICAgfVxuICAgIH1cbn0iXX0= */");
-
-/***/ }),
-
-/***/ "./src/app/pages/main-modal/main-modal.page.ts":
-/*!*****************************************************!*\
-  !*** ./src/app/pages/main-modal/main-modal.page.ts ***!
-  \*****************************************************/
-/*! exports provided: MainModalPage */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MainModalPage", function() { return MainModalPage; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
-
-
-
-let MainModalPage = class MainModalPage {
-    constructor(modalCtrl) {
-        this.modalCtrl = modalCtrl;
-    }
-    ngOnInit() {
-    }
-    close() {
-        this.modalCtrl.dismiss();
-    }
-};
-MainModalPage.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ModalController"] }
-];
-MainModalPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-main-modal',
-        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./main-modal.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/main-modal/main-modal.page.html")).default,
-        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./main-modal.page.scss */ "./src/app/pages/main-modal/main-modal.page.scss")).default]
-    })
-], MainModalPage);
-
-
 
 /***/ }),
 

@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { CategoryPageRoutingModule } from './category-routing.module';
 
 import { CategoryPage } from './category.page';
+import { ShopPage } from '../shop/shop.page';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { CategoryPage } from './category.page';
     CategoryPageRoutingModule,
     ReactiveFormsModule
   ],
-  declarations: [CategoryPage]
+  declarations: [CategoryPage],
+  providers:[ShopPage]
 })
 export class CategoryPageModule {}

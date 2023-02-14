@@ -4,10 +4,12 @@
       <ion-icon name="home-outline"></ion-icon>
     </ion-tab-button>
 
-    <ion-fab-button size="small" tab="explore">
-      <ion-icon name="add"></ion-icon>
-      
-    </ion-fab-button>
+  <ion-fab-button size="small" tab="explore" (click)="presentActionSheet()">
+    <ion-icon name="add"></ion-icon>
+    
+  </ion-fab-button>
+
+
 
     <!-- <ion-tab-button tab="brands">
             <ion-icon name="bookmark"></ion-icon>

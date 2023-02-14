@@ -42,7 +42,7 @@
             </div>
         </div>
         <div class="content_div">
-            <div class="header_flex">
+            <div class="header_flex" *ngIf="shops.categories.length > 0">
                 <ion-label class="bold_lbl">Categories</ion-label>
                 <ion-label class="grey_lbl">Show All</ion-label>
             </div>
@@ -50,57 +50,43 @@
                 <div class="main_col" *ngFor="let item of cats" (click)="goExplorePro()">
                     <div class="col_back" [style.backgroundImage]="'url('+ item +')'">
                         <div class="overlay">
-                            <ion-label class="white_lbl">Classic women collection</ion-label>
+                            <ion-label class="white_lbl">{{item.name}}</ion-label>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- <div class="holiday_slider" > -->
-                <div class="nodata" *ngIf="shops.categories.length == 0">
-                    <!-- <ion-img src="/assets/imgs/no-data.png"></ion-img> -->
-                    <div class="but">
-                        <ion-button class="ion-text-center" size="small" shape="round">
-                            Add Category
-                         </ion-button>
-                    </div>
-                   
-                <!-- </div> -->
-             
-            </div>
-            <div class="header_flex">
+       
+            <div class="header_flex" *ngIf="shops.products.length > 0">
                 <ion-label class="bold_lbl">Best Sellers</ion-label>
                 <ion-label class="grey_lbl" (click)="goToShopPage()">Show All</ion-label>
             </div>
-            <div class="trend_slider">
-                <div class="main_col" *ngFor="let item of product" (click)="goToProductDetail()">
-                    <div class="col_back" [style.backgroundImage]="'url('+ item +')'"></div>
+            <div class="trend_slider" *ngIf="shops.products.length > 0">
+                <div class="main_col" *ngFor="let item of products" (click)="goToProductDetail()">
+                    <div class="col_back" [style.backgroundImage]="'url(assets/imgs/no-image.png)'"></div>
                     <div class="detail_div">
-                        <ion-label class="name_lbl">Black T-shirt</ion-label>
-                        <ion-label class="price_lbl">$ 40.70</ion-label>
+                        <ion-label class="name_lbl">{{item.name}}</ion-label>
+                        <ion-label class="price_lbl">{{item.price}}</ion-label>
                     </div>
                 </div>
             </div>
-            <div class="header_flex">
+            <div class="header_flex" *ngIf="shops.products.length > 0">
                 <ion-label class="bold_lbl">Products</ion-label>
                 <ion-label class="grey_lbl" (click)="goToShopPage()">Show All</ion-label>
             </div>
             <div class="collection_slider" *ngIf="shops.products.length > 0">
-                <div class="main_col" *ngFor="let item of product" (click)="goToProductDetail()">
-                    <div class="col_back" [style.backgroundImage]="'url('+ item +')'">
+                <div class="main_col" *ngFor="let item of products" (click)="goToProductDetail()">
+                    <div class="col_back" [style.backgroundImage]="'url(assets/imgs/no-image.png)'">
                         <div class="round_div">
                             <ion-icon name="heart"></ion-icon>
                         </div>
                     </div>
                     <div class="detail_div">
-                        <ion-label class="name_lbl">Black T-shirt</ion-label>
-                        <ion-label class="price_lbl">$ 40.70</ion-label>
+                        <ion-label class="name_lbl">{{item.name}}</ion-label>
+                        <ion-label class="price_lbl">{{item.price}}</ion-label>
                     </div>
                 </div>
             </div>
-            <div class="imagenodata">
-                <ion-img src="/assets/imgs/no-data.png"></ion-img>
-            </div>
-            
+           
 
           
             
@@ -186,11 +172,11 @@
                         <ion-label class="grey_lbl" (click)="goToShopPage()">Show All</ion-label>
                     </div>
                     <div class="trend_slider">
-                        <div class="main_col" *ngFor="let item of product" (click)="goToProductDetail()">
-                            <div class="col_back" [style.backgroundImage]="'url('+ item +')'"></div>
+                        <div class="main_col" *ngFor="let item of product" >
+                            <ion-skeleton-text class="col_back" [animated]="true" style="width: 100%;">  </ion-skeleton-text>
                             <div class="detail_div">
-                                <ion-label class="name_lbl">Black T-shirt</ion-label>
-                                <ion-label class="price_lbl">$ 40.70</ion-label>
+                                <ion-skeleton-text  class="name_lbl" [animated]="true" style="width: 90%;"></ion-skeleton-text>
+                                <ion-skeleton-text class="price_lbl" [animated]="true" style="width: 45%;"></ion-skeleton-text>
                             </div>
                         </div>
                     </div>

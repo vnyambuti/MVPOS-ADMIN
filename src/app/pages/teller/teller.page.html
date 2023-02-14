@@ -1,0 +1,77 @@
+<ion-content>
+  <div class="main_content_div">
+
+    <ion-label class="head_lbl">Teller</ion-label>
+    <div class="stepper_div">
+      <ion-icon name="person-add-outline" [class.activeTab]="tabID >= 1"></ion-icon>
+      <ion-label [class.activeTab]="tabID >= 2">
+          <span>•</span>
+          <span>•</span>
+          <span>•</span>
+          <span>•</span>
+      </ion-label>
+      <ion-icon name="filter-circle-outline" [class.activeTab]="tabID >= 2"></ion-icon>
+      <ion-label [class.activeTab]="tabID == 3">
+          <span>•</span>
+          <span>•</span>
+          <span>•</span>
+          <span>•</span>
+      </ion-label>
+      <ion-icon name="pricetags-outline" [class.activeTab]="tabID == 3"></ion-icon>
+  </div>
+  <p></p>
+  <ion-label class="grey_title">Basic information</ion-label>
+<p></p>
+      <div class="shipping_div" *ngIf="tabID == 1">
+        <form (ngSubmit)="sendTeller()" [formGroup]="tellerForm">
+          <ion-row>
+            <ion-col size="6" style="padding-left: 0px;">
+                <ion-item class="username_box" lines="none">
+                    <ion-label position="floating">Fistname</ion-label>
+                    <ion-input type="text" formControlName="firstname"></ion-input>
+                </ion-item> 
+            </ion-col>
+            <ion-col size="6" style="padding-right: 0px;">
+                <ion-item class="username_box" lines="none">
+                    <ion-label position="floating">lastname</ion-label>
+                    <ion-input type="text" formControlName="lastname"></ion-input>
+                </ion-item> 
+            </ion-col>
+        </ion-row>
+          <ion-item class="username_box" lines="none">
+              <ion-label position="floating">phone</ion-label>
+              <ion-input type="tel" formControlName="phone"></ion-input>
+          </ion-item>
+
+       
+          
+          <ion-item class="username_box" lines="none">
+            <ion-label position="floating">email</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+        </ion-item> 
+          
+          <ion-item class="username_box" lines="none">
+              <ion-label position="floating">password</ion-label>
+              <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+          
+          
+
+          <!-- <div class="check_flex">
+              <ion-checkbox mode="md"></ion-checkbox>
+              <ion-label>Save for faster checkout next time</ion-label>
+          </div> -->
+
+          <ion-button type="submit" expand="block" [disabled]="!tellerForm.valid" shape="round">
+            Add
+          </ion-button>
+        </form>
+      </div>
+
+
+
+ 
+  </div>
+  <ion-spinner *ngIf="loading" name="crescent" class="ion-text-center"></ion-spinner>
+</ion-content>
+

@@ -8,6 +8,7 @@ import { ProductPageRoutingModule } from './product-routing.module';
 
 import { ProductPage } from './product.page';
 import { NgSelectModule} from '@ng-select/ng-select';
+import { ShopPage } from '../shop/shop.page';
 
 @NgModule({
   imports: [
@@ -21,6 +22,7 @@ import { NgSelectModule} from '@ng-select/ng-select';
     
     
   ],
-  declarations: [ProductPage]
+  declarations: [ProductPage],
+ providers:[ShopPage]
 })
 export class ProductPageModule {}

@@ -12,6 +12,7 @@ import { NgOtpInputModule } from 'ng-otp-input';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { JwtInterceptor } from './interceptors/interceptor';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler';
+import { ShopPage } from './pages/shop/shop.page';
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler';
   providers: [
     StatusBar,
     SplashScreen,
-    
+    ShopPage,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
   ],

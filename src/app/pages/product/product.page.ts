@@ -8,6 +8,7 @@ import { PaymentMethodPage } from '../payment-method/payment-method.page';
 import { Local } from 'protractor/built/driverProviders';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { environment } from 'src/environments/environment';
+import { ShopPage } from '../shop/shop.page';
 
 class Port {
   public id: number;
@@ -45,7 +46,7 @@ export class ProductPage implements OnInit {
       slidesPerView : 1.2
   };
   // regex = /^(?:254|\+254|0)?([0-7](?:(?:[129][0-9])|(?:0[0-8])|(4[0-1]))[0-9]{6})$/;
-  constructor(private route: Router, private navCtrl: NavController, private modalCtrl: ModalController,private alertCtrl:AlertController, private httpservice: GeneralService, private fb: FormBuilder) {
+  constructor(private route: Router,private mdlCtrl:ModalController, private sho:ShopPage, private navCtrl: NavController, private modalCtrl: ModalController,private alertCtrl:AlertController, private httpservice: GeneralService, private fb: FormBuilder) {
  
   }
   public myData: string[] = [];
@@ -194,10 +195,18 @@ export class ProductPage implements OnInit {
       colour:this.ddata
     }
     console.log(product);
-    this.httpservice.postData(environment.url + "products",product).subscribe((res)=>{
-      this.loading=false
-      console.log(res);
+    this.httpservice.postData(environment.url + "products",product).subscribe((res:any)=>{
       
+      if (!res.success) {
+
+        this.httpservice.presentToast(JSON.stringify(res.error))
+        this.loading=false
+      console.log(res);
+      } else {
+       this.route.navigate(['/tabs/shop'])
+        this.loading=false;
+        this.sho.ngOnInit();
+      }
     })
   }
 

@@ -127,6 +127,10 @@ const routes: Routes = [
     path: 'product',
     loadChildren: () => import('./pages/product/product.module').then( m => m.ProductPageModule)
   },
+  {
+    path: 'teller',
+    loadChildren: () => import('./pages/teller/teller.module').then( m => m.TellerPageModule)
+  },
 ];
 @NgModule({
   imports: [

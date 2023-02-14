@@ -1,7 +1,7 @@
 .main_content_div {
     width: 100%;
     padding: 16px;
-    margin-top: 40px;
+    // margin-top: 40px;
     .back_btn {
         margin-top: 40px;
         font-size: 30px;
@@ -32,15 +32,43 @@
     //         font-size: 24px;
     //     }
     // }
+    .stepper_div {
+        padding: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        ion-icon {
+            font-size: 22px !important;
+            color: gray;
+        }
+
+        ion-label {
+            display: flex;
+            justify-content: space-between;
+            width: 20%;
+            color: gray;
+        }
+
+        .activeTab {
+            color: var(--ion-color-primary) !important;
+            ion-icon {
+                color: var(--ion-color-primary) !important;
+            }
+            ion-label {
+                color: var(--ion-color-primary) !important;
+            }
+        }
+    }
 
     ion-button{
         margin: 0;
         margin-top: 30px;
     }
 
-    .sc-ion-input-md-h{
-        border:2px solid grey;
-        border-radius: 5px;
-        padding-left: 10px !important;
-    }
+    // .sc-ion-input-md-h{
+    //     border:2px solid grey;
+    //     border-radius: 5px;
+    //     padding-left: 10px !important;
+    // }
 }

@@ -22,17 +22,18 @@ export class ShopPage implements OnInit {
     'assets/imgs/11.jpg',
     'assets/imgs/14.jpg',
   ];
-  product = [
-    'assets/imgs/5.jpg',
-    'assets/imgs/6.jpg',
-    'assets/imgs/7.jpg',
-    'assets/imgs/8.jpg',
-    'assets/imgs/9.jpg',
-    'assets/imgs/10.jpg',
-    'assets/imgs/11.jpg',
-    'assets/imgs/12.jpg',
-  ];
-
+ 
+products
+product = [
+  'assets/imgs/5.jpg',
+  'assets/imgs/6.jpg',
+  'assets/imgs/7.jpg',
+  'assets/imgs/8.jpg',
+  'assets/imgs/9.jpg',
+  'assets/imgs/10.jpg',
+  'assets/imgs/11.jpg',
+  'assets/imgs/12.jpg',
+];
   constructor(private router: Router, private modalCrtl: ModalController, private HTTP: GeneralService) {
    
    }
@@ -49,16 +50,22 @@ export class ShopPage implements OnInit {
         this.shops=shops.data.shops[0];
         const store=JSON.stringify(this.shops);
         localStorage.setItem("shop",store);
-        if (this.shops.categories.length == 0 ) {
-          this.goToNewCategory();
-     
+        if (this.shops.tellers == 0 ) {
+          this.goToNewTeller();
         } else {
-          if (this.shops.products.length == 0) {
-            this.goToProduct();
+          if (this.shops.categories.length == 0 ) {
+            this.goToNewCategory();
+       
           } else {
-            
+            if (this.shops.products.length == 0) {
+              this.goToProduct();
+            } else {
+              this.cats=this.shops.categories
+              this.products=this.shops.products
+            }
           }
         }
+       
       console.log(shops);
       
     
@@ -84,6 +91,10 @@ export class ShopPage implements OnInit {
   //     }
   //  })
 
+  }
+
+  goToNewTeller(){
+    this.router.navigate(['/teller']);
   }
 
   goToProduct(){

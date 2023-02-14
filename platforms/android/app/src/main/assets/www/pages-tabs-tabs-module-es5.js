@@ -76,9 +76,9 @@
         children: [{
           path: 'shop',
           loadChildren: function loadChildren() {
-            return Promise.all(
+            return __webpack_require__.e(
             /*! import() | shop-shop-module */
-            [__webpack_require__.e("common"), __webpack_require__.e("shop-shop-module")]).then(__webpack_require__.bind(null,
+            "shop-shop-module").then(__webpack_require__.bind(null,
             /*! ../shop/shop.module */
             "./src/app/pages/shop/shop.module.ts")).then(function (m) {
               return m.ShopPageModule;

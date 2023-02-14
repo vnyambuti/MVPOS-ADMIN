@@ -7602,7 +7602,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<ion-content>\n  <div class=\"main_content_div\">\n      <form (ngSubmit)=\"sendCategory()\" [formGroup]=\"categoryForm\">\n      \n      <!-- <ion-icon name=\"chevron-back\" class=\"back_btn\" (click)=\"goToBack()\"></ion-icon> -->\n      <ion-label class=\"head_lbl\">Product</ion-label>\n      <ion-label class=\"grey_lbl\">Provide Information about the product</ion-label>\n      <ion-label class=\"grey_title\">Basic information</ion-label>\n      <!-- <ion-item > -->\n        <ion-input type=\"text\" class=\"custom\" formControlName=\"name\" placeholder=\"Steering wheel cover\">\n          <ion-icon name=\"clipboard-outline\"></ion-icon>\n      </ion-input>\n      <p></p>\n   \n        <ion-input type=\"price\" class=\"custom\" formControlName=\"price\" placeholder=\"9.99\">\n          <ion-icon name=\"pricetag-outline\"></ion-icon>\n      </ion-input>  \n      <!-- <p></p> -->\n      <ion-label class=\"grey_title\">Category</ion-label>\n      <ng-select  bindLabel=\"disease\" formControlName=\"category\"  notFoundText=\"No records found\">\n\n      <ng-option *ngFor=\"let car of categories\" [value]=\"car.id\">{{car.name}}</ng-option>\n      <!-- <ng-option  value=\"other\">other</ng-option> -->\n    </ng-select>\n     \n      \n    <!-- <p></p> -->\n    <ion-label class=\"grey_title\">Color</ion-label>\n    <div class=\"color_flex\">\n      <div class=\"color_div\" [style.backgroundColor]=\"black\" [class.active]=\"true\" (click)=\"showDrawer(i)\">\n        <ion-icon name=\"add\" ></ion-icon>\n    </div>\n      <div class=\"color_div\" [style.backgroundColor]=\"item.color\" [class.active]=\"currentColor == i\" *ngFor=\"let item of colors; let i = index\" (click)=\"chooseColor(item)\">\n          <ion-icon name=\"checkmark\" *ngIf=\"currentColor == i\"></ion-icon>\n      </div>\n  </div>\n \n  \n      <!-- </ion-item> -->\n    \n      <ion-button expand=\"block\" shape=\"round\" type=\"submit\" [disabled]=\"!categoryForm.valid\">\n        Add\n      </ion-button>\n      </form>\n  </div>\n <!-- <div class=\"ion-text-center\"> <small>Already Have a Code?</small> <ion-label class=\"small_lbl\" (click)=\"goToVerify()\" color=\"danger\"> PROCEED</ion-label> </div> -->\n  <ion-spinner *ngIf=\"loading\" name=\"crescent\" class=\"ion-text-center\"></ion-spinner>\n</ion-content>\n";
+      __webpack_exports__["default"] = "<ion-content>\n  <div class=\"main_content_div\">\n      <form (ngSubmit)=\"sendProduct()\" [formGroup]=\"productForm\">\n      \n      <!-- <ion-icon name=\"chevron-back\" class=\"back_btn\" (click)=\"goToBack()\"></ion-icon> -->\n      <ion-label class=\"head_lbl\">Product</ion-label>\n      <div class=\"stepper_div\">\n        <ion-icon name=\"person-add-outline\" [class.activeTab]=\"tabID >= 1\"></ion-icon>\n        <ion-label [class.activeTab]=\"tabID >= 2\">\n            <span>•</span>\n            <span>•</span>\n            <span>•</span>\n            <span>•</span>\n        </ion-label>\n        <ion-icon name=\"filter-circle-outline\" [class.activeTab]=\"tabID >= 2\"></ion-icon>\n        <ion-label [class.activeTab]=\"tabID == 3\">\n            <span>•</span>\n            <span>•</span>\n            <span>•</span>\n            <span>•</span>\n        </ion-label>\n        <ion-icon name=\"pricetags-outline\" [class.activeTab]=\"tabID == 3\"></ion-icon>\n    </div>\n      <ion-label class=\"grey_title\">Basic information</ion-label>\n      <ion-item >\n       <ion-label position=\"floating\">Name</ion-label>\n        <ion-input type=\"text\" formControlName=\"name\">\n          <!-- <ion-icon name=\"clipboard-outline\"></ion-icon> -->\n      </ion-input>\n      </ion-item>\n      <p></p>\n      <ion-item >\n        <ion-label position=\"floating\">Price</ion-label>\n         <ion-input type=\"number\" formControlName=\"price\">\n           <!-- <ion-icon name=\"clipboard-outline\"></ion-icon> -->\n       </ion-input>\n       </ion-item>\n     \n      <!-- <p></p> -->\n      <ion-label class=\"grey_title\">Category</ion-label>\n      <ng-select  bindLabel=\"disease\" formControlName=\"category\"  notFoundText=\"No records found\">\n\n      <ng-option *ngFor=\"let car of categories\" [value]=\"car.id\">{{car.name}}</ng-option>\n      <!-- <ng-option  value=\"other\">other</ng-option> -->\n    </ng-select>\n     \n      \n    <!-- <p></p> -->\n    <ion-label class=\"grey_title\">Color</ion-label>\n    <div class=\"color_flex\">\n      <div class=\"color_div\" [style.backgroundColor]=\"black\" [class.active]=\"true\" (click)=\"addColor(i)\">\n        <ion-icon name=\"add\" ></ion-icon>\n    </div>\n      <div class=\"color_div\" [style.backgroundColor]=\"item.color\" [class.active]=\"currentColor == i\" *ngFor=\"let item of ddata; let i = index\" (click)=\"chooseColor(item)\">\n          <ion-icon name=\"checkmark\" *ngIf=\"currentColor == i\"></ion-icon>\n      </div>\n  </div>\n \n  \n      <!-- </ion-item> -->\n    \n      <ion-button expand=\"block\" shape=\"round\" type=\"submit\" [disabled]=\"!productForm.valid\">\n        Add\n      </ion-button>\n      </form>\n  </div>\n <!-- <div class=\"ion-text-center\"> <small>Already Have a Code?</small> <ion-label class=\"small_lbl\" (click)=\"goToVerify()\" color=\"danger\"> PROCEED</ion-label> </div> -->\n  <ion-spinner *ngIf=\"loading\" name=\"crescent\" class=\"ion-text-center\"></ion-spinner>\n</ion-content>\n";
       /***/
     },
 
@@ -7733,6 +7733,12 @@
       var _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @ng-select/ng-select */
       "./node_modules/@ng-select/ng-select/__ivy_ngcc__/fesm2015/ng-select-ng-select.js");
+      /* harmony import */
+
+
+      var _shop_shop_page__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      /*! ../shop/shop.page */
+      "./src/app/pages/shop/shop.page.ts");
 
       var ProductPageModule = function ProductPageModule() {
         _classCallCheck(this, ProductPageModule);
@@ -7740,7 +7746,8 @@
 
       ProductPageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"], _product_routing_module__WEBPACK_IMPORTED_MODULE_5__["ProductPageRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"], _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_7__["NgSelectModule"]],
-        declarations: [_product_page__WEBPACK_IMPORTED_MODULE_6__["ProductPage"]]
+        declarations: [_product_page__WEBPACK_IMPORTED_MODULE_6__["ProductPage"]],
+        providers: [_shop_shop_page__WEBPACK_IMPORTED_MODULE_8__["ShopPage"]]
       })], ProductPageModule);
       /***/
     },
@@ -7761,7 +7768,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = ".main_content_div {\n  width: 100%;\n  padding: 16px;\n}\n.main_content_div .back_btn {\n  margin-top: 40px;\n  font-size: 30px;\n}\n.main_content_div ion-label {\n  display: block;\n}\n.main_content_div .head_lbl {\n  font-size: 26px;\n  font-family: \"semi-bold\";\n  margin-bottom: 16px;\n  margin-top: 30px;\n}\n.main_content_div .grey_lbl {\n  color: grey;\n  font-size: 14px;\n  margin-bottom: 20px;\n}\n.main_content_div ion-button {\n  margin: 0;\n  margin-top: 30px;\n}\n.main_content_div .sc-ion-input-md-h {\n  border: 2px solid grey;\n  border-radius: 5px;\n  padding-left: 10px !important;\n}\n.main_content_div label#ion-sel-0-lbl {\n  border: 2px solid grey !important;\n  border-radius: 5px;\n  padding-left: 10px !important;\n}\n.main_content_div .ionic-selectable-inner {\n  border: 2px solid gray !important;\n  border-radius: 5px !important;\n  height: 43px !important;\n}\n.main_content_div .ionic-selectable {\n  border: 2px solid grey;\n  border-radius: 5px;\n  height: 45px;\n  padding-left: 30px;\n}\n.main_content_div .color_flex {\n  display: flex;\n  overflow: scroll;\n  padding-bottom: 10px;\n}\n.main_content_div .color_flex .color_div {\n  height: 40px;\n  width: 40px;\n  min-width: 40px;\n  border-radius: 100%;\n  margin-right: 16px;\n  position: relative;\n}\n.main_content_div .color_flex .color_div ion-icon {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.main_content_div .color_flex .color_div2 {\n  height: 40px;\n  width: 40px;\n  min-width: 40px;\n  border-radius: 100%;\n  margin-right: 16px;\n  background: #ECEBF1;\n  position: relative;\n}\n.main_content_div .color_flex .color_div2 ion-label {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  font-size: 14px;\n}\n.main_content_div .color_flex .active {\n  border: 3px solid white;\n  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);\n}\n.main_content_div .grey_title {\n  color: grey;\n  font-size: 14px;\n  margin-top: 10px;\n  margin-bottom: 5px;\n}\n.main_content_div .ng-select {\n  height: 43px !important;\n  border: 2px solid grey !important;\n  border-radius: 5px !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvcHJvZHVjdC9wcm9kdWN0LnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFdBQUE7RUFDQSxhQUFBO0FBQ0o7QUFDSTtFQUNJLGdCQUFBO0VBQ0EsZUFBQTtBQUNSO0FBRUk7RUFDSSxjQUFBO0FBQVI7QUFHSTtFQUNJLGVBQUE7RUFDQSx3QkFBQTtFQUNBLG1CQUFBO0VBQ0EsZ0JBQUE7QUFEUjtBQUdJO0VBQ0ksV0FBQTtFQUNBLGVBQUE7RUFDQSxtQkFBQTtBQURSO0FBY0k7RUFDSSxTQUFBO0VBQ0EsZ0JBQUE7QUFaUjtBQWNJO0VBQ0ksc0JBQUE7RUFDQSxrQkFBQTtFQUNBLDZCQUFBO0FBWlI7QUFlRztFQUNDLGlDQUFBO0VBQ0ksa0JBQUE7RUFDQSw2QkFBQTtBQWJSO0FBZUM7RUFFRyxpQ0FBQTtFQUNBLDZCQUFBO0VBQ0EsdUJBQUE7QUFkSjtBQWdCQTtFQUNHLHNCQUFBO0VBQ0Esa0JBQUE7RUFDQSxZQUFBO0VBQ0Qsa0JBQUE7QUFkRjtBQWdCQTtFQUNJLGFBQUE7RUFDQSxnQkFBQTtFQUNBLG9CQUFBO0FBZEo7QUFnQkk7RUFDSSxZQUFBO0VBQ0EsV0FBQTtFQUNBLGVBQUE7RUFDQSxtQkFBQTtFQUNBLGtCQUFBO0VBQ0Esa0JBQUE7QUFkUjtBQWdCUTtFQUNJLGtCQUFBO0VBQ0EsUUFBQTtFQUNBLFNBQUE7RUFDQSxnQ0FBQTtBQWRaO0FBa0JJO0VBQ0ksWUFBQTtFQUNBLFdBQUE7RUFDQSxlQUFBO0VBQ0EsbUJBQUE7RUFDQSxrQkFBQTtFQUNBLG1CQUFBO0VBQ0Esa0JBQUE7QUFoQlI7QUFrQlE7RUFDSSxrQkFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsZ0NBQUE7RUFDQSxlQUFBO0FBaEJaO0FBbUJJO0VBQ0ksdUJBQUE7RUFDQSwwQ0FBQTtBQWpCUjtBQW9CQTtFQUNJLFdBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxrQkFBQTtBQWxCSjtBQW9CQTtFQUNJLHVCQUFBO0VBQ0EsaUNBQUE7RUFDQSw2QkFBQTtBQWxCSiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3Byb2R1Y3QvcHJvZHVjdC5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubWFpbl9jb250ZW50X2RpdiB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIHBhZGRpbmc6IDE2cHg7XHJcbiAgIC8vIG1hcmdpbi10b3A6IDEwcHg7XHJcbiAgICAuYmFja19idG4ge1xyXG4gICAgICAgIG1hcmdpbi10b3A6IDQwcHg7XHJcbiAgICAgICAgZm9udC1zaXplOiAzMHB4O1xyXG4gICAgfVxyXG5cclxuICAgIGlvbi1sYWJlbCB7XHJcbiAgICAgICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICB9XHJcblxyXG4gICAgLmhlYWRfbGJsIHtcclxuICAgICAgICBmb250LXNpemU6IDI2cHg7XHJcbiAgICAgICAgZm9udC1mYW1pbHk6ICdzZW1pLWJvbGQnO1xyXG4gICAgICAgIG1hcmdpbi1ib3R0b206IDE2cHg7XHJcbiAgICAgICAgbWFyZ2luLXRvcDogMzBweDtcclxuICAgIH1cclxuICAgIC5ncmV5X2xibCB7XHJcbiAgICAgICAgY29sb3I6IGdyZXk7XHJcbiAgICAgICAgZm9udC1zaXplOiAxNHB4O1xyXG4gICAgICAgIG1hcmdpbi1ib3R0b206IDIwcHg7XHJcbiAgICB9XHJcblxyXG4gICAgLy8gaW9uLWlucHV0IHtcclxuICAgIC8vICAgICBib3JkZXItYm90dG9tOiAxcHggc29saWQgbGlnaHRncmV5O1xyXG4gICAgLy8gICAgIC0tcGFkZGluZy1zdGFydDogOHB4O1xyXG4gICAgLy8gICAgIC0tcGFkZGluZy1lbmQ6IDhweDtcclxuICAgIC8vICAgICBmb250LWZhbWlseTogJ3JlZ3VsYXInO1xyXG4gICAgLy8gICAgIGlvbi1pY29uIHtcclxuICAgIC8vICAgICAgICAgZm9udC1zaXplOiAyNHB4O1xyXG4gICAgLy8gICAgIH1cclxuICAgIC8vIH1cclxuXHJcbiAgICBpb24tYnV0dG9ue1xyXG4gICAgICAgIG1hcmdpbjogMDtcclxuICAgICAgICBtYXJnaW4tdG9wOiAzMHB4O1xyXG4gICAgfVxyXG4gICAgLnNjLWlvbi1pbnB1dC1tZC1oe1xyXG4gICAgICAgIGJvcmRlcjoycHggc29saWQgZ3JleTtcclxuICAgICAgICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgICAgICAgcGFkZGluZy1sZWZ0OiAxMHB4ICFpbXBvcnRhbnQ7XHJcbiAgICB9XHJcblxyXG4gICBsYWJlbCNpb24tc2VsLTAtbGJse1xyXG4gICAgYm9yZGVyOjJweCBzb2xpZCBncmV5ICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG4gICAgICAgIHBhZGRpbmctbGVmdDogMTBweCAhaW1wb3J0YW50O1xyXG4gfVxyXG4gLmlvbmljLXNlbGVjdGFibGUtaW5uZXIge1xyXG4gICBcclxuICAgIGJvcmRlcjogMnB4IHNvbGlkIGdyYXkgIWltcG9ydGFudDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDVweCAhaW1wb3J0YW50O1xyXG4gICAgaGVpZ2h0OiA0M3B4ICFpbXBvcnRhbnQ7XHJcbn1cclxuLmlvbmljLXNlbGVjdGFibGV7XHJcbiAgIGJvcmRlcjoycHggc29saWQgZ3JleTtcclxuICAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG4gICBoZWlnaHQ6IDQ1cHg7XHJcbiAgcGFkZGluZy1sZWZ0OiAzMHB4O1xyXG59XHJcbi5jb2xvcl9mbGV4IHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBvdmVyZmxvdzogc2Nyb2xsO1xyXG4gICAgcGFkZGluZy1ib3R0b206IDEwcHg7XHJcbiAgICBcclxuICAgIC5jb2xvcl9kaXYge1xyXG4gICAgICAgIGhlaWdodDogNDBweDtcclxuICAgICAgICB3aWR0aDogNDBweDtcclxuICAgICAgICBtaW4td2lkdGg6IDQwcHg7XHJcbiAgICAgICAgYm9yZGVyLXJhZGl1czogMTAwJTtcclxuICAgICAgICBtYXJnaW4tcmlnaHQ6IDE2cHg7XHJcbiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG5cclxuICAgICAgICBpb24taWNvbiB7XHJcbiAgICAgICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgICAgICAgdG9wOiA1MCU7XHJcbiAgICAgICAgICAgIGxlZnQ6IDUwJTtcclxuICAgICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwtNTAlKTtcclxuICAgICAgICAgICAgXHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG4gICAgLmNvbG9yX2RpdjIge1xyXG4gICAgICAgIGhlaWdodDogNDBweDtcclxuICAgICAgICB3aWR0aDogNDBweDtcclxuICAgICAgICBtaW4td2lkdGg6IDQwcHg7XHJcbiAgICAgICAgYm9yZGVyLXJhZGl1czogMTAwJTtcclxuICAgICAgICBtYXJnaW4tcmlnaHQ6IDE2cHg7XHJcbiAgICAgICAgYmFja2dyb3VuZDogI0VDRUJGMTtcclxuICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICAgICAgXHJcbiAgICAgICAgaW9uLWxhYmVsIHtcclxuICAgICAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgICAgICB0b3A6IDUwJTtcclxuICAgICAgICAgICAgbGVmdDogNTAlO1xyXG4gICAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLC01MCUpO1xyXG4gICAgICAgICAgICBmb250LXNpemU6IDE0cHg7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG4gICAgLmFjdGl2ZSB7XHJcbiAgICAgICAgYm9yZGVyOiAzcHggc29saWQgd2hpdGU7XHJcbiAgICAgICAgYm94LXNoYWRvdzogMHB4IDNweCA2cHggcmdiYSgwLDAsMCwwLjIpO1xyXG4gICAgfVxyXG59XHJcbi5ncmV5X3RpdGxlIHtcclxuICAgIGNvbG9yOiBncmV5O1xyXG4gICAgZm9udC1zaXplOiAxNHB4O1xyXG4gICAgbWFyZ2luLXRvcDogMTBweDtcclxuICAgIG1hcmdpbi1ib3R0b206IDVweDtcclxufVxyXG4ubmctc2VsZWN0e1xyXG4gICAgaGVpZ2h0OiA0M3B4ICFpbXBvcnRhbnQ7XHJcbiAgICBib3JkZXI6IDJweCBzb2xpZCBncmV5ICFpbXBvcnRhbnQ7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1cHggIWltcG9ydGFudDtcclxufVxyXG59Il19 */";
+      __webpack_exports__["default"] = ".main_content_div {\n  width: 100%;\n  padding: 16px;\n}\n.main_content_div .back_btn {\n  margin-top: 40px;\n  font-size: 30px;\n}\n.main_content_div ion-label {\n  display: block;\n}\n.main_content_div .stepper_div {\n  padding: 16px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.main_content_div .stepper_div ion-icon {\n  font-size: 22px !important;\n  color: gray;\n}\n.main_content_div .stepper_div ion-label {\n  display: flex;\n  justify-content: space-between;\n  width: 20%;\n  color: gray;\n}\n.main_content_div .stepper_div .activeTab {\n  color: var(--ion-color-primary) !important;\n}\n.main_content_div .stepper_div .activeTab ion-icon {\n  color: var(--ion-color-primary) !important;\n}\n.main_content_div .stepper_div .activeTab ion-label {\n  color: var(--ion-color-primary) !important;\n}\n.main_content_div .head_lbl {\n  font-size: 26px;\n  font-family: \"semi-bold\";\n  margin-bottom: 16px;\n  margin-top: 30px;\n}\n.main_content_div .grey_lbl {\n  color: grey;\n  font-size: 14px;\n  margin-bottom: 20px;\n}\n.main_content_div ion-button {\n  margin: 0;\n  margin-top: 30px;\n}\n.main_content_div .color_flex {\n  display: flex;\n  overflow: scroll;\n  padding-bottom: 10px;\n}\n.main_content_div .color_flex .color_div {\n  height: 40px;\n  width: 40px;\n  min-width: 40px;\n  border-radius: 100%;\n  margin-right: 16px;\n  position: relative;\n}\n.main_content_div .color_flex .color_div ion-icon {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.main_content_div .color_flex .color_div2 {\n  height: 40px;\n  width: 40px;\n  min-width: 40px;\n  border-radius: 100%;\n  margin-right: 16px;\n  background: #ECEBF1;\n  position: relative;\n}\n.main_content_div .color_flex .color_div2 ion-label {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  font-size: 14px;\n}\n.main_content_div .color_flex .active {\n  border: 3px solid white;\n  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);\n}\n.main_content_div .grey_title {\n  color: grey;\n  font-size: 14px;\n  margin-top: 10px;\n  margin-bottom: 5px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvcHJvZHVjdC9wcm9kdWN0LnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFdBQUE7RUFDQSxhQUFBO0FBQ0o7QUFDSTtFQUNJLGdCQUFBO0VBQ0EsZUFBQTtBQUNSO0FBRUk7RUFDSSxjQUFBO0FBQVI7QUFFSTtFQUNJLGFBQUE7RUFDQSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSw4QkFBQTtBQUFSO0FBRVE7RUFDSSwwQkFBQTtFQUNBLFdBQUE7QUFBWjtBQUdRO0VBQ0ksYUFBQTtFQUNBLDhCQUFBO0VBQ0EsVUFBQTtFQUNBLFdBQUE7QUFEWjtBQUlRO0VBQ0ksMENBQUE7QUFGWjtBQUdZO0VBQ0ksMENBQUE7QUFEaEI7QUFHWTtFQUNJLDBDQUFBO0FBRGhCO0FBTUk7RUFDSSxlQUFBO0VBQ0Esd0JBQUE7RUFDQSxtQkFBQTtFQUNBLGdCQUFBO0FBSlI7QUFNSTtFQUNJLFdBQUE7RUFDQSxlQUFBO0VBQ0EsbUJBQUE7QUFKUjtBQWlCSTtFQUNJLFNBQUE7RUFDQSxnQkFBQTtBQWZSO0FBd0NBO0VBQ0ksYUFBQTtFQUNBLGdCQUFBO0VBQ0Esb0JBQUE7QUF0Q0o7QUF3Q0k7RUFDSSxZQUFBO0VBQ0EsV0FBQTtFQUNBLGVBQUE7RUFDQSxtQkFBQTtFQUNBLGtCQUFBO0VBQ0Esa0JBQUE7QUF0Q1I7QUF3Q1E7RUFDSSxrQkFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsZ0NBQUE7QUF0Q1o7QUEwQ0k7RUFDSSxZQUFBO0VBQ0EsV0FBQTtFQUNBLGVBQUE7RUFDQSxtQkFBQTtFQUNBLGtCQUFBO0VBQ0EsbUJBQUE7RUFDQSxrQkFBQTtBQXhDUjtBQTBDUTtFQUNJLGtCQUFBO0VBQ0EsUUFBQTtFQUNBLFNBQUE7RUFDQSxnQ0FBQTtFQUNBLGVBQUE7QUF4Q1o7QUEyQ0k7RUFDSSx1QkFBQTtFQUNBLDBDQUFBO0FBekNSO0FBNENBO0VBQ0ksV0FBQTtFQUNBLGVBQUE7RUFDQSxnQkFBQTtFQUNBLGtCQUFBO0FBMUNKIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvcHJvZHVjdC9wcm9kdWN0LnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tYWluX2NvbnRlbnRfZGl2IHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgcGFkZGluZzogMTZweDtcclxuICAgLy8gbWFyZ2luLXRvcDogMTBweDtcclxuICAgIC5iYWNrX2J0biB7XHJcbiAgICAgICAgbWFyZ2luLXRvcDogNDBweDtcclxuICAgICAgICBmb250LXNpemU6IDMwcHg7XHJcbiAgICB9XHJcblxyXG4gICAgaW9uLWxhYmVsIHtcclxuICAgICAgICBkaXNwbGF5OiBibG9jaztcclxuICAgIH1cclxuICAgIC5zdGVwcGVyX2RpdiB7XHJcbiAgICAgICAgcGFkZGluZzogMTZweDtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG5cclxuICAgICAgICBpb24taWNvbiB7XHJcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMjJweCAhaW1wb3J0YW50O1xyXG4gICAgICAgICAgICBjb2xvcjogZ3JheTtcclxuICAgICAgICB9XHJcblxyXG4gICAgICAgIGlvbi1sYWJlbCB7XHJcbiAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICAgICAgICAgICAgd2lkdGg6IDIwJTtcclxuICAgICAgICAgICAgY29sb3I6IGdyYXk7XHJcbiAgICAgICAgfVxyXG5cclxuICAgICAgICAuYWN0aXZlVGFiIHtcclxuICAgICAgICAgICAgY29sb3I6IHZhcigtLWlvbi1jb2xvci1wcmltYXJ5KSAhaW1wb3J0YW50O1xyXG4gICAgICAgICAgICBpb24taWNvbiB7XHJcbiAgICAgICAgICAgICAgICBjb2xvcjogdmFyKC0taW9uLWNvbG9yLXByaW1hcnkpICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgaW9uLWxhYmVsIHtcclxuICAgICAgICAgICAgICAgIGNvbG9yOiB2YXIoLS1pb24tY29sb3ItcHJpbWFyeSkgIWltcG9ydGFudDtcclxuICAgICAgICAgICAgfVxyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbiAgICAuaGVhZF9sYmwge1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMjZweDtcclxuICAgICAgICBmb250LWZhbWlseTogJ3NlbWktYm9sZCc7XHJcbiAgICAgICAgbWFyZ2luLWJvdHRvbTogMTZweDtcclxuICAgICAgICBtYXJnaW4tdG9wOiAzMHB4O1xyXG4gICAgfVxyXG4gICAgLmdyZXlfbGJsIHtcclxuICAgICAgICBjb2xvcjogZ3JleTtcclxuICAgICAgICBmb250LXNpemU6IDE0cHg7XHJcbiAgICAgICAgbWFyZ2luLWJvdHRvbTogMjBweDtcclxuICAgIH1cclxuXHJcbiAgICAvLyBpb24taW5wdXQge1xyXG4gICAgLy8gICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCBsaWdodGdyZXk7XHJcbiAgICAvLyAgICAgLS1wYWRkaW5nLXN0YXJ0OiA4cHg7XHJcbiAgICAvLyAgICAgLS1wYWRkaW5nLWVuZDogOHB4O1xyXG4gICAgLy8gICAgIGZvbnQtZmFtaWx5OiAncmVndWxhcic7XHJcbiAgICAvLyAgICAgaW9uLWljb24ge1xyXG4gICAgLy8gICAgICAgICBmb250LXNpemU6IDI0cHg7XHJcbiAgICAvLyAgICAgfVxyXG4gICAgLy8gfVxyXG5cclxuICAgIGlvbi1idXR0b257XHJcbiAgICAgICAgbWFyZ2luOiAwO1xyXG4gICAgICAgIG1hcmdpbi10b3A6IDMwcHg7XHJcbiAgICB9XHJcbiAgICAvLyAuc2MtaW9uLWlucHV0LW1kLWh7XHJcbiAgICAvLyAgICAgYm9yZGVyOjJweCBzb2xpZCBncmV5O1xyXG4gICAgLy8gICAgIGJvcmRlci1yYWRpdXM6IDVweDtcclxuICAgIC8vICAgICBwYWRkaW5nLWxlZnQ6IDEwcHggIWltcG9ydGFudDtcclxuICAgIC8vIH1cclxuXHJcbi8vICAgIGxhYmVsI2lvbi1zZWwtMC1sYmx7XHJcbi8vICAgICBib3JkZXI6MnB4IHNvbGlkIGdyZXkgIWltcG9ydGFudDtcclxuLy8gICAgICAgICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbi8vICAgICAgICAgcGFkZGluZy1sZWZ0OiAxMHB4ICFpbXBvcnRhbnQ7XHJcbi8vICB9XHJcbi8vICAuaW9uaWMtc2VsZWN0YWJsZS1pbm5lciB7XHJcbiAgIFxyXG4vLyAgICAgYm9yZGVyOiAycHggc29saWQgZ3JheSAhaW1wb3J0YW50O1xyXG4vLyAgICAgYm9yZGVyLXJhZGl1czogNXB4ICFpbXBvcnRhbnQ7XHJcbi8vICAgICBoZWlnaHQ6IDQzcHggIWltcG9ydGFudDtcclxuLy8gfVxyXG4vLyAuaW9uaWMtc2VsZWN0YWJsZXtcclxuLy8gICAgYm9yZGVyOjJweCBzb2xpZCBncmV5O1xyXG4vLyAgICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbi8vICAgIGhlaWdodDogNDVweDtcclxuLy8gICBwYWRkaW5nLWxlZnQ6IDMwcHg7XHJcbi8vIH1cclxuLmNvbG9yX2ZsZXgge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIG92ZXJmbG93OiBzY3JvbGw7XHJcbiAgICBwYWRkaW5nLWJvdHRvbTogMTBweDtcclxuICAgIFxyXG4gICAgLmNvbG9yX2RpdiB7XHJcbiAgICAgICAgaGVpZ2h0OiA0MHB4O1xyXG4gICAgICAgIHdpZHRoOiA0MHB4O1xyXG4gICAgICAgIG1pbi13aWR0aDogNDBweDtcclxuICAgICAgICBib3JkZXItcmFkaXVzOiAxMDAlO1xyXG4gICAgICAgIG1hcmdpbi1yaWdodDogMTZweDtcclxuICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcblxyXG4gICAgICAgIGlvbi1pY29uIHtcclxuICAgICAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgICAgICB0b3A6IDUwJTtcclxuICAgICAgICAgICAgbGVmdDogNTAlO1xyXG4gICAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLC01MCUpO1xyXG4gICAgICAgICAgICBcclxuICAgICAgICB9XHJcbiAgICB9XHJcbiAgICAuY29sb3JfZGl2MiB7XHJcbiAgICAgICAgaGVpZ2h0OiA0MHB4O1xyXG4gICAgICAgIHdpZHRoOiA0MHB4O1xyXG4gICAgICAgIG1pbi13aWR0aDogNDBweDtcclxuICAgICAgICBib3JkZXItcmFkaXVzOiAxMDAlO1xyXG4gICAgICAgIG1hcmdpbi1yaWdodDogMTZweDtcclxuICAgICAgICBiYWNrZ3JvdW5kOiAjRUNFQkYxO1xyXG4gICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgICAgICBcclxuICAgICAgICBpb24tbGFiZWwge1xyXG4gICAgICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgICAgIHRvcDogNTAlO1xyXG4gICAgICAgICAgICBsZWZ0OiA1MCU7XHJcbiAgICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsLTUwJSk7XHJcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMTRweDtcclxuICAgICAgICB9XHJcbiAgICB9XHJcbiAgICAuYWN0aXZlIHtcclxuICAgICAgICBib3JkZXI6IDNweCBzb2xpZCB3aGl0ZTtcclxuICAgICAgICBib3gtc2hhZG93OiAwcHggM3B4IDZweCByZ2JhKDAsMCwwLDAuMik7XHJcbiAgICB9XHJcbn1cclxuLmdyZXlfdGl0bGUge1xyXG4gICAgY29sb3I6IGdyZXk7XHJcbiAgICBmb250LXNpemU6IDE0cHg7XHJcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xyXG4gICAgbWFyZ2luLWJvdHRvbTogNXB4O1xyXG59XHJcbi8vIC5uZy1zZWxlY3R7XHJcbi8vICAgICBoZWlnaHQ6IDQzcHggIWltcG9ydGFudDtcclxuLy8gICAgIGJvcmRlcjogMnB4IHNvbGlkIGdyZXkgIWltcG9ydGFudDtcclxuLy8gICAgIGJvcmRlci1yYWRpdXM6IDVweCAhaW1wb3J0YW50O1xyXG4vLyB9XHJcbn0iXX0= */";
       /***/
     },
 
@@ -7826,6 +7833,18 @@
       var _payment_method_payment_method_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! ../payment-method/payment-method.page */
       "./src/app/pages/payment-method/payment-method.page.ts");
+      /* harmony import */
+
+
+      var src_environments_environment__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      /*! src/environments/environment */
+      "./src/environments/environment.ts");
+      /* harmony import */
+
+
+      var _shop_shop_page__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      /*! ../shop/shop.page */
+      "./src/app/pages/shop/shop.page.ts");
 
       var Port = function Port() {
         _classCallCheck(this, Port);
@@ -7833,12 +7852,15 @@
 
       var ProductPage = /*#__PURE__*/function () {
         // regex = /^(?:254|\+254|0)?([0-7](?:(?:[129][0-9])|(?:0[0-8])|(4[0-1]))[0-9]{6})$/;
-        function ProductPage(route, navCtrl, modalCtrl, httpservice, fb) {
+        function ProductPage(route, mdlCtrl, sho, navCtrl, modalCtrl, alertCtrl, httpservice, fb) {
           _classCallCheck(this, ProductPage);
 
           this.route = route;
+          this.mdlCtrl = mdlCtrl;
+          this.sho = sho;
           this.navCtrl = navCtrl;
           this.modalCtrl = modalCtrl;
+          this.alertCtrl = alertCtrl;
           this.httpservice = httpservice;
           this.fb = fb;
           this.loading = false;
@@ -7846,6 +7868,16 @@
             color: "Neutral"
           }];
           this.newcolor = [];
+          this.prods = {
+            color: '',
+            stock: '',
+            lowstock: ''
+          };
+          this.ddata = [];
+          this.tabID = 3;
+          this.slideCardOpts = {
+            slidesPerView: 1.2
+          };
           this.myData = [];
         }
 
@@ -7858,7 +7890,8 @@
             // localStorage.setItem("Colours", initialcolours);
 
             this.shop = JSON.parse(localStorage.getItem('shop')).id;
-            this.categoryForm = this.fb.group({
+            console.log(this.shop);
+            this.productForm = this.fb.group({
               shop_id: [this.shop],
               name: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
               price: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
@@ -7943,6 +7976,119 @@
               }, _callee2, this);
             }));
           }
+        }, {
+          key: "addColor",
+          value: function addColor() {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+              var _this21 = this;
+
+              var alert;
+              return regeneratorRuntime.wrap(function _callee3$(_context3) {
+                while (1) {
+                  switch (_context3.prev = _context3.next) {
+                    case 0:
+                      _context3.next = 2;
+                      return this.alertCtrl.create({
+                        // header: 'DIRECTOR',
+                        // message: 'Please add name and tax number',
+                        inputs: [{
+                          name: 'color',
+                          type: 'text',
+                          placeholder: 'Colour'
+                        }, {
+                          name: 'stock',
+                          type: 'number',
+                          placeholder: 'Stock Count'
+                        }, {
+                          name: 'lowstock',
+                          type: 'number',
+                          placeholder: 'Low Stock'
+                        }],
+                        buttons: [{
+                          text: 'Cancel',
+                          role: 'cancel'
+                        }, {
+                          text: 'Add',
+                          handler: function handler(data) {
+                            console.log(data);
+
+                            if (data.color.length < 1) {
+                              var message = "Colour required";
+
+                              _this21.httpservice.presentToast(message);
+                            } else if (data.stock.length < 1) {
+                              var message1 = "Stock required";
+
+                              _this21.httpservice.presentToast(message1);
+                            } else if (data.lowstock.length < 1) {
+                              var message3 = "Low Stock required";
+
+                              _this21.httpservice.presentToast(message3);
+                            } else {
+                              _this21.prods = {
+                                color: data.color,
+                                stock: data.stock,
+                                lowstock: data.lowstock
+                              };
+
+                              _this21.ddata.push(_this21.prods); // this.store.set('directors', this.ddata).then(r => {
+                              //   this.bankForm.controls.dname.setValidators(null);
+                              //   this.bankForm.controls.dpin.setValidators(null);
+                              //   this.bankForm.controls.dname.updateValueAndValidity();
+                              //   this.bankForm.controls.dpin.updateValueAndValidity();
+                              //   this.ddata = r
+                              // })
+
+
+                              console.log(_this21.ddata); // console.log(this.bankForm.controls.dname.setValidators(null));
+                            }
+                          }
+                        }]
+                      });
+
+                    case 2:
+                      alert = _context3.sent;
+                      _context3.next = 5;
+                      return alert.present();
+
+                    case 5:
+                    case "end":
+                      return _context3.stop();
+                  }
+                }
+              }, _callee3, this);
+            }));
+          }
+        }, {
+          key: "sendProduct",
+          value: function sendProduct() {
+            var _this22 = this;
+
+            this.loading = true;
+            var id = JSON.parse(localStorage.getItem('shop')).id;
+            var product = {
+              shop: id,
+              name: this.productForm.controls.name.value,
+              category: this.productForm.controls.category.value,
+              price: this.productForm.controls.price.value,
+              colour: this.ddata
+            };
+            console.log(product);
+            this.httpservice.postData(src_environments_environment__WEBPACK_IMPORTED_MODULE_7__["environment"].url + "products", product).subscribe(function (res) {
+              if (!res.success) {
+                _this22.httpservice.presentToast(JSON.stringify(res.error));
+
+                _this22.loading = false;
+                console.log(res);
+              } else {
+                _this22.route.navigate(['/tabs/shop']);
+
+                _this22.loading = false;
+
+                _this22.sho.ngOnInit();
+              }
+            });
+          }
         }]);
 
         return ProductPage;
@@ -7952,9 +8098,15 @@
         return [{
           type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]
         }, {
+          type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"]
+        }, {
+          type: _shop_shop_page__WEBPACK_IMPORTED_MODULE_8__["ShopPage"]
+        }, {
           type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["NavController"]
         }, {
           type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"]
+        }, {
+          type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["AlertController"]
         }, {
           type: src_app_services_general_service__WEBPACK_IMPORTED_MODULE_5__["GeneralService"]
         }, {
